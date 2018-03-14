@@ -1,0 +1,11 @@
+name: rPackageStats
+title:
+account: craigwang
+server: shinyapps.io
+appId: 136082
+bundleId: 1267814
+url: https://craigwang.shinyapps.io/rPackageStats/
+when: 1521012749.42665
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: www/ajax-loader-bar.gif
