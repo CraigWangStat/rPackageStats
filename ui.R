@@ -10,7 +10,7 @@ load("./data/names.RData")
 shinyUI(navbarPage(
   # useShinyjs(),
   # Application title
-  "R Package Downloads Around the World",
+  "Download of R Packages Worldwide",
   
   header=tags$head(includeScript("google-analytics.js"),
                    # tags$style(HTML(".shiny-notification {
@@ -42,19 +42,16 @@ shinyUI(navbarPage(
       
       # Wrap the button in the function `withBusyIndicatorUI()`
       actionButton("go","Plot", class = "btn-primary", style = "border-radius: 10%;"),
-      br(),br(),
+      tags$hr(),
       uiOutput('download_data'),
-      br(),
-      uiOutput('download_plot'),
-      br(),br(),
-      HTML("Please contact <a href='http://t.uzh.ch/Ip'>Craig Wang</a> for any feedback."),
+      tags$hr(),
+      HTML("Please contact <a href='http://t.uzh.ch/Oc' target = '_blank'>Craig Wang</a> for any feedback."),
       br(),HTML("<b>Note</b>: The connection may be unstable due to large dataset, please restart if the app crashes.")
       ),
     
     # Show a plot of the generated distribution
     mainPanel(
       plotOutput("plot1"),
-      textOutput("top5.des"),
       tableOutput("top5")
     )
   )
@@ -62,7 +59,9 @@ shinyUI(navbarPage(
   tabPanel("News",
            fluidRow(
              column(width = 5,
-                    HTML("version 0.9 (2018-03-11): Fixed bug in country name matching, log10 times in dominance map, show top 10 countries, speed ups",
+                    HTML("version 0.9-1 (2018-05-11): Bug fixes, remove download plot, updated usage statistics",
+                         "<br><br>",
+                         "version 0.9 (2018-03-11): Fixed bug in country name matching, log10 times in dominance map, show top 10 countries, speed ups",
                          "<br><br>",
                          "version 0.8 (2017-11-29): Added smoothing, app usage, button feedback {https://github.com/daattali/advanced-shiny}",
                          "<br><br>",
@@ -80,7 +79,7 @@ shinyUI(navbarPage(
   tabPanel("About",
            HTML("This application is based on the data (updated 2018-03-10) from RStudio CRAN mirror.",
                 "<br><br>",
-                "Inspired by David Robinson on http://varianceexplained.org/",
+                "Inspired by David Robinson on <a href='http://varianceexplained.org/' target='_blank'>http://varianceexplained.org/</a>",
                 "<br><br>","App Version 0.9, last updated: 2018-03-11","<br><br>"),
            img(src='Capture.PNG', width=550,height=260, align = "left"))
 ))
